@@ -515,6 +515,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
         {
             return -1;
         }
+        
+        // Some good info:
+        /*
+        
+        _currentVersion("") 
+        GupParameters 
+        
+        
+        */
+        
+        
+        // The end
 		return 0;
 
 	} catch (exception ex) {
