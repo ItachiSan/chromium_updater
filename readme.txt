@@ -1,3 +1,13 @@
+What is CUP?
+------------
+CUP is a Windows updater for the open-source browser Chromium (CUP = Chromium UPdater).
+Is mainly based on GUP-win32, it's just tweaked a bit in order to make it work better.
+In fact, GUP is good for Notepad++ and other software, but not for a project higly
+updated like Chromium.
+
+I think that I'll also make a Java version of it...
+Will see.
+
 What is GUP?
 ------------
 
@@ -58,3 +68,5 @@ To whom should you say "thank you"?
 
 Don HO
 <don.h@free.fr>
+
+Than me, if you think I deserve it.
