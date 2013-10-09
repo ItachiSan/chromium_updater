@@ -385,6 +385,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
 		}
 
 		GupDownloadInfo gupDlInfo(updateInfo.c_str());
+		const char * Version = gupDlInfo.getDownloadLocation().c_str();
 
 		if (!gupDlInfo.doesNeed2BeUpdated())
 		{
@@ -514,7 +515,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
         if ((unsigned long)result <= 32) // There's a problem (Don't ask me why, ask Microsoft)
         {
             return -1;
-        }   
+        }
+        
+        // Update the version value in the XML file
+	UpdateVersionInfo("gup.xml", Version);
+
+        // The end
 		return 0;
 
 	} catch (exception ex) {
