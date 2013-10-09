@@ -100,3 +100,5 @@ public:
 protected:
 	TiXmlNode *_nativeLangRoot;
 };
+
+void UpdateVersionInfo(const char * xmlFileName, const char * Version );

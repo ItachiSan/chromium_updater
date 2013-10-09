@@ -259,3 +259,28 @@ string GupNativeLang::getMessageString(string msgID)
 	
 	return val;
 }
+
+void UpdateVersionInfo(const char * xmlFileName, const char * Version )
+{
+	_xmlDoc.LoadFile(xmlFileName);
+
+	TiXmlNode *root = _xmlDoc.FirstChild("GUPInput");
+	if (!root)
+		throw exception("It's not a valid GUP input xml.");
+
+	TiXmlNode *versionNode = root->FirstChildElement("Version");
+	if (versionNode)
+	{
+		TiXmlNode *n = versionNode->FirstChild();
+		if (n)
+		{
+			const char *val = n->Value();
+			if (val)
+			{
+				n->SetValue(Version);
+			}
+		}
+	}
+
+	_xmlDoc.SaveFile();
+}

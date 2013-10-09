@@ -7,4 +7,5 @@ GUP.vcxproj
 GUP.vcxproj.*
 no_MS_shit.props
 UpgradeLog.*
-
+GUP.sln
+vcproj/Debug/*

@@ -385,6 +385,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
 		}
 
 		GupDownloadInfo gupDlInfo(updateInfo.c_str());
+		const char * Version = gupDlInfo.getDownloadLocation().c_str();
 
 		if (!gupDlInfo.doesNeed2BeUpdated())
 		{
@@ -516,16 +517,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
             return -1;
         }
         
-        // Some good info:
-        /*
-        
-        _currentVersion("") 
-        GupParameters 
-        
-        
-        */
-        
-        
+        // After reading TinyXML doc (finally, LOL) just wrote a good piece of software
+
+		UpdateVersionInfo("gup.xml", Version);
+
         // The end
 		return 0;
 
