@@ -101,4 +101,7 @@ protected:
 	TiXmlNode *_nativeLangRoot;
 };
 
-void UpdateVersionInfo(const char * xmlFileName, const char * Version );
+class GupVersion : public XMLTool {
+public:
+	void UpdateVersionInfo(const char * xmlFileName, const char * Version );
+};

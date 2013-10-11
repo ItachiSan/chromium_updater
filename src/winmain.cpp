@@ -314,6 +314,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
 		GupExtraOptions extraOptions("gupOptions.xml");
 		GupNativeLang nativeLang("nativeLang.xml");
 
+		// Some works
+		GupVersion updater;
+
 		if (launchSettingsDlg)
 		{
 			if (extraOptions.hasProxySettings())
@@ -385,7 +388,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
 		}
 
 		GupDownloadInfo gupDlInfo(updateInfo.c_str());
-		const char * Version = gupDlInfo.getDownloadLocation().c_str();
+		const char * Version = gupDlInfo.getVersion().c_str();
 
 		if (!gupDlInfo.doesNeed2BeUpdated())
 		{
@@ -518,7 +521,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpszCmdLine, int nCmdSh
         }
         
         // Update the version value in the XML file
-	UpdateVersionInfo("gup.xml", Version);
+	updater.UpdateVersionInfo("gup.xml", Version);
 
         // The end
 		return 0;
