@@ -260,7 +260,7 @@ string GupNativeLang::getMessageString(string msgID)
 	return val;
 }
 
-void UpdateVersionInfo(const char * xmlFileName, const char * Version )
+void GupVersion::UpdateVersionInfo(const char * xmlFileName, const char * Version )
 {
 	_xmlDoc.LoadFile(xmlFileName);
 
